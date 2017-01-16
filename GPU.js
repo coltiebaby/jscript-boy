@@ -8,12 +8,12 @@
  *   pixel = y * 160 + x
  *
  * Period                        |  GPU mode number  |  Time spent (clocks)
- * Scanline (accessing OAM)  	 |   2               |	80
- * Scanline (accessing VRAM)	 |   3	             |  172
- * Horizontal blank	             |   0	             |  204
- * One line (scan and blank)	 |   	             |  456
- * Vertical blank	             |   1	             |  4560 (10 lines)
- * Full frame (scans and vblank) |	                 |  70224
+ * Scanline (accessing OAM)      |   2               |	80
+ * Scanline (accessing VRAM)     |   3               |  172
+ * Horizontal blank              |   0               |  204
+ * One line (scan and blank)     |                   |  456
+ * Vertical blank                |   1               |  4560 (10 lines)
+ * Full frame (scans and vblank) |                   |  70224
  **/
 
 GPU = {
