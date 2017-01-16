@@ -1,0 +1,27 @@
+<canvas id="screen"
+        height="144"
+        width="160"></canvas>
+
+<script>
+    console.log("Hi");
+    c = document.getElementById('screen').getContext('2d');
+
+    if (c.createImageData) {
+        canvas_data = c.createImageData(160, 144);
+    } else if (c.getImageData) {
+        canvas_data = c.getImageData(0,0, 160,144);
+    } else {
+        canvas_data = {
+            'width':  160,
+            'height': 144,
+            'data':   new Array(160*144*4)
+        };
+    }
+
+    for(var i=0; i<160*144*4; i++) {
+        canvas_data.data[i] = 155;
+    }
+
+    console.log("Setting color");
+    c.putImageData(canvas_data, 0, 0);
+</script>

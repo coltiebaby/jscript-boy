@@ -201,6 +201,8 @@ while (true) {
     Z80._r.pc &= 65535;
     Z80._clock.m += Z80._r.m;
     Z80._clock.t += Z80._r.t;
+
+    GPU.step();
 }
 
 // List of operations
