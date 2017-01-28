@@ -121,7 +121,14 @@ MMU = {
         return MMU.rb(addr) + (MMU.rb(addr+1) << 8);
     },
     wb: function(addr, val) {
-        /* Write 8 bit byte from a given address */
+        switch (addr & 0xF000) {
+            // Only the VRAM case is shown:
+            case 0x8000:
+            case 0x9000:
+                GPU._vram[addr & 0x1FFF] = val;
+                GPU.updatetile(addr, val);
+                break;
+        }
     },
     ww: function(addr) {
         /* Write 16 bit word from a given address */
